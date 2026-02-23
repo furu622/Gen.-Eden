@@ -61,16 +61,23 @@ body {
 }
 
 .series-box {
-  margin-top: 40px;   /* まずは40pxくらい */
+  margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.2); /* 区切り線（任意） */
+  border-top: 1px solid rgba(255,255,255,0.2);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* PCは2列 */
+  gap: 10px;
 }
 
 .series-box h3 {
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  opacity: 0.6;
-  text-transform: uppercase;
+  grid-column: 1 / -1; /* タイトルは横幅いっぱい */
+}
+
+@media (max-width: 600px) {
+  .series-box {
+    grid-template-columns: 1fr; /* スマホは1列 */
+  }
 }
 
 
