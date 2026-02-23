@@ -30,9 +30,14 @@
 
 async function loadQuestions(category) {
 
-  if (!window.questions) {
+  if (!window.questionsCache) {
+    window.questionsCache = {};
+  }
+
+  if (!window.questionsCache[category]) {
+
     try {
-      const res = await fetch("questions.csv");
+      const res = await fetch(`data/${category}.csv`);
       const text = await res.text();
 
       const parsed = Papa.parse(text, {
@@ -40,12 +45,12 @@ async function loadQuestions(category) {
         skipEmptyLines: true
       });
 
-      window.questions = parsed.data.map(q => ({
+      window.questionsCache[category] = parsed.data.map(q => ({
         series: q.series,
         scientist: q.scientist,
         question: q.q,
         choices: [q.c1, q.c2, q.c3, q.c4].filter(Boolean),
-        answer: Number(q.answer) -1, //0始まりに変換 
+        answer: Number(q.answer) - 1,
         explanation: q.explanation,
         difficulty: q.difficulty
       }));
@@ -56,11 +61,7 @@ async function loadQuestions(category) {
     }
   }
 
-  if (category === "science") {
-    return window.questions.filter(q => q.series === "mechanics");
-  }
-
-  return [];
+  return window.questionsCache[category] || [];
 }
 
 

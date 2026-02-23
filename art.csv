@@ -1,0 +1,90 @@
+series,person,q,c1,c2,c3,c4,answer,explanation,difficulty
+art,monet,Which art movement is Claude Monet mainly associated with?,Baroque,Impressionism,Surrealism,Renaissance,2,Monet was one of the founders of Impressionism.,easy
+art,monet,What is Monet's famous series depicting water lilies?,Les Nymphéas,Starry Night,Sunflowers,The Scream,1,Monet painted many Water Lilies works in his later years.,easy
+art,monet,In which country was Monet born?,France,Italy,Spain,Germany,1,"Monet was born in Paris, France.",easy
+art,monet,Which technique did Monet emphasize in his paintings?,Strict geometric composition,Light and color perception,Photorealistic detail,Monochrome shading,2,Impressionism focused on light and color rather than precise detail.,normal
+art,monet,Which location did Monet paint repeatedly later in life?,London Bridge series,Japanese bridge and garden at Giverny,Venice canals,Alpine mountains,2,Monet painted his garden and Japanese bridge at Giverny many times.,normal
+art,monet,What was revolutionary about Monet's painting style at the time?,Focus on industrial scenes,Emphasis on capturing momentary light effects,Use of digital techniques,Strict religious symbolism,2,Monet helped establish Impressionism by capturing changing light conditions.,normal
+art,monet,Which of the following influenced Monet's color style?,Scientific studies of optics,Medieval iconography,Classical sculpture,Political propaganda art,1,Monet was influenced by contemporary optical science.,hard
+art,monet,"Which city did Monet paint in his famous ""Impression, Sunrise""?",Paris,Le Havre,London,Rome,2,The painting depicted the harbor of Le Havre.,hard
+art,monet,Monet's later works became more focused on what visual element?,Perspective lines,Atmospheric color and reflection,Portrait realism,Architectural accuracy,2,His late works emphasized atmosphere over structure.,hard
+art,renoir,Which art movement is Pierre-Auguste Renoir associated with?,Cubism,Impressionism,Baroque,Romanticism,2,Renoir was one of the leading Impressionist painters.,easy
+art,renoir,What subjects did Renoir often paint?,Industrial machinery,Leisure life and people,Religious wars,Abstract geometry,2,Renoir frequently painted social leisure scenes.,easy
+art,renoir,Which country was Renoir born in?,France,Italy,England,Netherlands,1,Renoir was born in France.,easy
+art,renoir,Renoir was especially known for his depiction of what?,Metal textures,Human skin and soft light,Mechanical structures,Dark monochrome shadows,2,He focused on warm human tones and soft lighting.,normal
+art,renoir,Which social environment frequently appeared in Renoir's works?,Factories and machines,Parisian social life and cafés,Military battlefields,Desert landscapes,2,Renoir depicted modern Parisian leisure culture.,normal
+art,renoir,What was distinctive about Renoir's later painting style?,More rigid geometric structure,More soft and warm color tones,Monochrome photography style,Strict realism,2,His later works emphasized softer color harmony.,normal
+art,renoir,Which Impressionist characteristic did Renoir strongly emphasize?,Atmospheric light effects,Political propaganda,Religious symbolism,Photorealistic portraits,1,He focused on light effects on human subjects.,hard
+art,renoir,Which famous Parisian venue did Renoir often paint?,Opera houses,Montmartre social venues,Factories,Suburban farms,2,Montmartre was a popular artistic and social area.,hard
+art,renoir,Renoir’s famous work 'Dance at Le Moulin de la Galette' mainly depicts what?,War scene,Social dance party,Landscape painting,Religious ritual,2,The painting depicts a lively Paris dance gathering.,hard
+art,degas,Which art movement is Edgar Degas associated with?,Impressionism,Cubism,Surrealism,Baroque,1,Degas is often associated with Impressionism but focused on composition and movement.,easy
+art,degas,What subjects was Degas especially famous for painting?,Ballet dancers,Seascapes,Portraits of royalty,Religious scenes,1,Degas is famous for ballet dancer paintings.,easy
+art,degas,Degas often emphasized which visual element?,Movement and posture,Political themes,Industrial machinery,Landscape atmosphere,1,"He was interested in capturing movement, especially in dance scenes.",normal
+art,degas,Which technique was Degas known for using?,Photography-like cropping,Strict classical symmetry,Abstract color blocks,Pointillism only,1,Degas was influenced by photography composition.,normal
+art,degas,Which Parisian location was often depicted in Degas' works?,Opera and ballet theaters,Industrial factories,Suburban countryside,Desert cities,1,He frequently painted ballet rehearsals at theaters.,hard
+art,degas,Degas' works are often described as focusing on what?,Static religious symbolism,Modern urban life and movement,Mythological heroes,Abstract geometry,2,He focused on modern life scenes.,hard
+art,impressionism_compare,Which painter is most known for water lily paintings?,Monet,Renoir,Degas,Manet,1,Monet is famous for Water Lilies.,easy
+art,impressionism_compare,Which painter focused most on ballet dancers?,Monet,Renoir,Degas,Cezanne,3,Degas is famous for ballet scenes.,easy
+art,impressionism_compare,Which painter emphasized social leisure scenes in Paris?,Monet,Renoir,Degas,Van Gogh,2,Renoir often painted social gatherings.,normal
+art,impressionism_compare,Which painter was most influenced by photography composition?,Degas,Monet,Renoir,Picasso,1,Degas often used photographic framing.,normal
+art,impressionism_compare,Who is most strongly associated with capturing light on water surfaces?,Monet,Degas,Renoir,Michelangelo,1,Monet focused on light reflection on water.,normal
+art,impressionism_compare,Which painter is most associated with dance movement studies?,Degas,Renoir,Monet,Rembrandt,1,Degas specialized in movement study.,hard
+art,impressionism_compare,Which painter painted people in outdoor leisure settings?,Renoir,Degas,Monet,Da Vinci,1,Renoir depicted outdoor social life.,hard
+art,impressionism_compare,Which painter is considered most experimental with composition?,Degas,Monet,Renoir,Turner,1,Degas experimented with unusual framing.,hard
+music,mozart,Which musical period is Mozart mainly associated with?,Baroque,Classical,Romantic,Modern,2,Mozart was a major composer of the Classical period.,easy
+music,mozart,Which instrument did Mozart compose extensively for?,Electric guitar,Violin and piano,Synthesizer,Drums,2,Mozart wrote many works for piano and string instruments.,easy
+music,mozart,Which city was Mozart born in?,Vienna,Salzburg,Paris,Berlin,2,"Mozart was born in Salzburg, Austria.",easy
+music,mozart,Mozart was considered a musical prodigy because?,He invented new instruments,He composed at a very young age,He was a conductor only,He wrote only religious music,2,He was composing music at age 5.,normal
+music,mozart,Which famous opera did Mozart compose?,The Magic Flute,La Traviata,Carmen,The Ring Cycle,1,The Magic Flute is one of Mozart's most famous operas.,normal
+music,mozart,What was characteristic of Mozart’s composition style?,Heavy dissonance and chaos,Balanced structure and melody,Electronic sound experimentation,Minimalist repetition,2,Classical period music emphasized balance and clarity.,normal
+music,mozart,Which composer strongly influenced Mozart?,Beethoven (later period),Haydn,Stravinsky,Bach (modern influence),2,Joseph Haydn greatly influenced Mozart’s style.,hard
+music,mozart,Mozart died at what age?,35,45,55,65,1,Mozart died young at age 35.,hard
+music,mozart,Which genre did Mozart NOT primarily compose?,Symphonies,Concertos,Operas,Heavy metal music,4,Heavy metal did not exist in Mozart's era.,hard
+music,beethoven,Which musical period is Beethoven mainly associated with?,Baroque,Classical,Classical to Romantic transition,Modern,3,Beethoven was a transitional composer between Classical and Romantic periods.,easy
+music,beethoven,"Which famous symphony begins with the ""short-short-short-long"" motif?",Symphony No.3,Symphony No.5,Symphony No.6,Symphony No.9,2,Beethoven's Fifth Symphony is famous for this motif.,easy
+music,beethoven,Beethoven was known for gradually losing what sense during his life?,Sight,Hearing,Taste,Touch,2,Beethoven became almost completely deaf later in life.,easy
+music,beethoven,In which city did Beethoven spend most of his career?,Vienna,Paris,London,Rome,1,Beethoven lived and worked mainly in Vienna.,normal
+music,beethoven,Which musical era did Beethoven help transition into?,Medieval,Romantic,Baroque,Electronic,2,Beethoven influenced the Romantic era.,normal
+music,beethoven,Which characteristic is typical of Beethoven’s music?,Strict light melodies,Strong emotional expression,Minimalist repetition only,Electronic effects,2,Beethoven’s music became more emotionally expressive.,normal
+music,beethoven,"Which Beethoven symphony is known as the ""Choral Symphony""?",Symphony No.1,Symphony No.5,Symphony No.9,Symphony No.7,3,Symphony No.9 includes the famous choral finale.,hard
+music,beethoven,Beethoven’s famous piano piece 'Für Elise' is primarily known for?,Fast technical difficulty,Simple and memorable melody,Orchestral arrangement,Religious theme,2,Für Elise is famous for its simple melody.,hard
+music,beethoven,Beethoven was strongly influenced by which earlier composer?,Mozart,Haydn,All of these,Handel,3,Beethoven studied under Haydn and was influenced by Mozart.,hard
+music,bach,Which musical era is Bach mainly associated with?,Classical,Baroque,Romantic,Modern,2,Bach is one of the most important composers of the Baroque period.,easy
+music,bach,Bach was famous for which musical technique?,Serialism,Counterpoint,Minimalism,Electronic synthesis,2,Bach mastered counterpoint composition.,easy
+music,bach,Which instrument is Bach strongly associated with?,Violin,Piano,Organ,Electric guitar,3,Bach composed many works for the church organ.,easy
+music,bach,Which famous collection of keyboard works did Bach compose?,The Well-Tempered Clavier,The Magic Flute,Symphony No.9,Four Seasons,1,The Well-Tempered Clavier is one of Bach's most important works.,normal
+music,bach,Bach worked mainly for which institution?,Royal courts,Churches and religious institutions,Opera companies,Film studios,2,Bach worked as a church musician for much of his life.,normal
+music,bach,Which musical concept did Bach help develop?,Counterpoint harmony only,Functional harmony foundations,Electronic harmony,12-tone system,2,Bach helped establish foundations of tonal harmony.,normal
+music,bach,Which composer family did Bach belong to?,Mozart family,Bach family only as composer dynasty,Beethoven family,Schubert family,2,The Bach family produced many musicians across generations.,hard
+music,bach,Bach's music was rediscovered and popularized in the 19th century by which composer?,Beethoven,Mendelssohn,Mahler,Debussy,2,Mendelssohn helped revive Bach's music.,hard
+music,bach,Which religious tradition influenced Bach's music?,Protestant Lutheranism,Catholic Gregorian chant only,Shintoism,Greek mythology,1,Bach worked in Lutheran church music tradition.,hard
+music,comparison,Which composer is mainly associated with Baroque music?,Bach,Mozart,Beethoven,Mahler,1,Bach represents the Baroque era.,easy
+music,comparison,Which composer is known for child prodigy achievements?,Bach,Mozart,Beethoven,Chopin,2,Mozart was famous as a child prodigy.,easy
+music,comparison,Which composer is considered a bridge between Classical and Romantic music?,Bach,Mozart,Beethoven,Handel,3,Beethoven expanded classical forms into romantic expression.,normal
+music,comparison,Who composed many works for church and religious settings?,Beethoven,Mozart,Bach,Schubert,3,Bach worked extensively in church music.,normal
+music,comparison,Which composer became progressively deaf during life?,Bach,Mozart,Beethoven,Haydn,3,Beethoven lost his hearing but continued composing.,easy
+music,comparison,Which composer is strongly associated with counterpoint composition?,Mozart,Beethoven,Bach,Tchaikovsky,3,Bach perfected counterpoint techniques.,normal
+music,comparison,Who is known for symphonies such as Symphony No.9?,Bach,Beethoven,Mozart,Debussy,2,Beethoven composed Symphony No.9.,normal
+music,comparison,Which composer lived the earliest chronologically?,Mozart,Beethoven,Bach,Schubert,3,Bach lived during the Baroque period.,hard
+music,comparison,Which composer wrote a large number of piano sonatas?,Bach,Mozart,Beethoven,Vivaldi,3,Beethoven wrote many piano sonatas.,hard
+music,comparison,Which composer strongly influenced later tonal harmony development?,Beethoven,Bach,Mozart,Stravinsky,2,Bach influenced tonal harmony foundations.,hard
+music,liszt,Franz Liszt was mainly known as?,Pianist virtuoso and composer,Violinist,Opera singer,Conductor,1,Liszt was one of the greatest piano virtuosos in history,easy
+music,liszt,Which era did Liszt belong to?,Baroque,Classical,Romantic,Modern,3,Liszt was a Romantic era composer,easy
+music,liszt,Liszt is famous for developing which style?,Symphonic poem,Gregorian chant,Opera reform,Serial music,1,He pioneered the symphonic poem,normal
+music,liszt,Which instrument was Liszt primarily associated with?,Piano,Violin,Organ,Flute,1,He revolutionized piano performance technique,easy
+music,liszt,Liszt influenced which later composers?,Wagner,Handel,Bach,Monteverdi,1,He influenced Wagner and late Romantic harmony,normal
+music,liszt,Liszt was born in which country?,Hungary,France,Germany,Italy,1,He was born in Hungary,easy
+music,liszt,What was Liszt famous for during concerts?,Playing from memory,Conducting choirs,Writing operas only,Inventing instruments,1,He was famous for playing from memory,normal
+music,liszt,Which musical movement did Liszt help advance?,Romanticism,Impressionism,Baroque revival,Minimalism,1,He was a key Romantic composer,hard
+music,liszt,Liszt's piano works are known for?,Extreme technical difficulty,Simple melodies,Religious chants only,Electronic sound,1,His works are extremely technically demanding,hard
+music,liszt,Which genre did Liszt help establish?,Symphonic poem,Chamber sonata,Gregorian mass,Serial opera,1,He helped establish the symphonic poem,hard
+music,pachelbel,Which musical era is Pachelbel mainly associated with?,Baroque,Classical,Romantic,Modern,1,Pachelbel was a Baroque period composer,easy
+music,pachelbel,Pachelbel is most famous for which musical work?,Canon in D,Für Elise,Four Seasons,Symphony No.5,1,Canon in D is his most famous work,easy
+music,pachelbel,What type of composition is Pachelbel's Canon in D?,Canon with repeating bass line,Symphony,Opera,Electronic music,1,It is famous for its repeating harmonic progression,easy
+music,pachelbel,Pachelbel influenced which musical tradition?,Baroque church music,Electronic dance music,Jazz improvisation,Serialism,1,He composed many church music works,normal
+music,pachelbel,Which country was Pachelbel from?,Germany,France,Italy,Austria,1,He was born in Germany,easy
+music,pachelbel,Pachelbel was known for composing mainly?,Organ and sacred music,Piano concertos only,Film music,Heavy metal music,1,He specialized in church and organ music,normal
+music,pachelbel,Which musical technique is associated with Pachelbel?,Ground bass repetition,12-tone technique,Minimalist sampling,Blues scale,1,He helped develop ground bass patterns,normal
+music,pachelbel,Pachelbel lived during which century?,16th century,17th century,19th century,20th century,2,He lived mainly in the 1600s,normal
+music,pachelbel,Which composer generation was Pachelbel part of?,Early Baroque composers,Classical Viennese school,Romantic nationalist composers,Modernist composers,1,He was part of early Baroque composition tradition,hard
+music,pachelbel,What is characteristic of Pachelbel's Canon?,Simple harmonic progression and repetition,Random atonal structure,Electronic modulation,Opera aria structure,1,The canon is known for simple harmonic cycles,hard

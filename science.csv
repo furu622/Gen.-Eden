@@ -1,4 +1,4 @@
-series,scientist,q,c1,c2,c3,c4,answer,explanation,difficulty
+series,person,q,c1,c2,c3,c4,answer,explanation,difficulty
 mechanics,galileo,In what year was Galileo born?,1543,1564,1609,1687,2,1564 was also the birth year of Shakespeare.,easy
 mechanics,galileo,What model of the universe did Galileo support?,Geocentric,Heliocentric,Flat Earth,Dual-sphere,2,He supported the Sun-centered model.,easy
 mechanics,galileo,Which planet’s moons did Galileo observe in 1610?,Mars,Jupiter,Saturn,Venus,2,"Galileo discovered four major moons of Jupiter, now called the Galilean moons",easy
