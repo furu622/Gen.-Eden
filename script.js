@@ -64,14 +64,14 @@ async function loadQuestions(category) {
   }
 }
 
-  window.questions = result.data.map(q => ({
-  series: q.series,
-  scientist: q.scientist,
-  question: q.q,
-  choices: [q.c1, q.c2, q.c3, q.c4],
+window.questions = parsed.data.map(q => ({
+  series: q.series?.trim(),
+  scientist: q.scientist?.trim(),
+  question: q.q?.trim(),
+  choices: [q.c1, q.c2, q.c3, q.c4].map(x => x?.trim()),
   answer: Number(q.answer),
-  explanation: q.explanation,
-  difficulty: q.difficulty
+  explanation: q.explanation?.trim(),
+  difficulty: q.difficulty?.trim()
 }));
 
   switch (category) {
