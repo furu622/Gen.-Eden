@@ -64,15 +64,6 @@ async function loadQuestions(category) {
   }
 }
 
-window.questions = parsed.data.map(q => ({
-  series: q.series?.trim(),
-  scientist: q.scientist?.trim(),
-  question: q.q?.trim(),
-  choices: [q.c1, q.c2, q.c3, q.c4].map(x => x?.trim()),
-  answer: Number(q.answer),
-  explanation: q.explanation?.trim(),
-  difficulty: q.difficulty?.trim()
-}));
 
   switch (category) {
     case "science":
@@ -187,9 +178,9 @@ function nextQuestion() {
 
 /* 7. 問題表示処理 */
 function renderQuestion(question) {
-  document.getElementById("question").textContent = question.q;
+  document.getElementById("question").textContent = question.question;
 
-  speak(question.q);
+  speak(question.question);
 
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = ""; // 前の選択肢を消す
