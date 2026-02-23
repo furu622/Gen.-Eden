@@ -118,20 +118,20 @@ function toggleQuestion() {
 /* 4. カテゴリ選択 */
 
 
-function goMenu() { 
+function goMenu() {
   stopTimer();
   document.getElementById("result").textContent = "";
   document.getElementById("nextBtn").style.display = "none";
   document.getElementById("explanation").textContent = "";
-  showScreen("gameMenu"); 
+  showScreen("gameMenu");
 }
 
-function goLevel() { 
-  stopTimer(); 
+function goLevel() {
+  stopTimer();
   document.getElementById("result").textContent = "";
   document.getElementById("nextBtn").style.display = "none";
   document.getElementById("explanation").textContent = "";
-  showScreen("levelMenu"); 
+  showScreen("levelMenu");
 }
 
 /* 5. 難易度選択 */
@@ -152,15 +152,15 @@ function selectLevel(levelName) {
 /* 6. クイズ開始処理 */
 function nextQuestion() {
 
-    document.getElementById("nextBtn").style.display = "none";
-    document.getElementById("result").textContent = "";
-    document.getElementById("explanation").textContent = "";
+  document.getElementById("nextBtn").style.display = "none";
+  document.getElementById("result").textContent = "";
+  document.getElementById("explanation").textContent = "";
 
-    if (state.pool.length === 0) {
-      endSession();
-      return;
-    }
-    
+  if (state.pool.length === 0) {
+    endSession();
+    return;
+  }
+
   state.isAnswered = false;
 
   const index = Math.floor(Math.random() * state.pool.length);
@@ -170,14 +170,14 @@ function nextQuestion() {
 
   renderQuestion(question);
 
-  startTimer();
+  speak(question.question, () => {
+    startTimer();
+  });
 }
 
 /* 7. 問題表示処理 */
 function renderQuestion(question) {
   document.getElementById("question").textContent = question.question;
-
-  speak(question.question);
 
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = ""; // 前の選択肢を消す
@@ -213,7 +213,7 @@ function checkAnswerUI(selectedIndex) {
   state.isAnswered = true;
   stopTimer();
 
-    document.getElementById("nextBtn").style.display = "block";
+  document.getElementById("nextBtn").style.display = "block";
 }
 
 /* 9. タイマー処理 10. プログレス表示（円形ゲージ）*/
@@ -266,10 +266,10 @@ function updateSessionDisplay() {
   document.getElementById("totalCount").textContent = sessionState.total;
 
   if (sessionState.startTime) {
-    const elapsedSec = Math.floor((Date.now() - sessionState.startTime)/1000);
-    const minutes = Math.floor(elapsedSec/60);
+    const elapsedSec = Math.floor((Date.now() - sessionState.startTime) / 1000);
+    const minutes = Math.floor(elapsedSec / 60);
     const seconds = elapsedSec % 60;
-    document.getElementById("elapsedTime").textContent = `${minutes}:${seconds.toString().padStart(2,'0')}`;
+    document.getElementById("elapsedTime").textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
   }
 }
 
@@ -301,8 +301,8 @@ function recordAnswer(isCorrect) {
 function endSession() {
   stopElapsedTimer();
   if (!sessionState.startTime) { alert("セッションが開始されていません"); return; }
-  const elapsedSec = Math.floor((Date.now() - sessionState.startTime)/1000);
-  const minutes = Math.floor(elapsedSec/60);
+  const elapsedSec = Math.floor((Date.now() - sessionState.startTime) / 1000);
+  const minutes = Math.floor(elapsedSec / 60);
   const seconds = elapsedSec % 60;
   alert(`正解率: ${sessionState.correct}/${sessionState.total}\nプレイ時間: ${minutes}分 ${seconds}秒`);
 }
@@ -311,7 +311,24 @@ function endSession() {
 
 /* 13. 補助関数 */
 function randomPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-function speak(text) { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = "en-US"; speechSynthesis.speak(u); }
+
+function speak(text, callback) {
+  speechSynthesis.cancel();
+
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US";
+
+  const currentQuestion = state.currentQuestion;
+
+  u.onend = () => {
+    // 今の問題と一致しているときだけタイマー開始
+    if (callback && state.currentQuestion === currentQuestion) {
+      callback();
+    }
+  };
+
+  speechSynthesis.speak(u);
+}
 
 /* 14. Enter制御 */
 document.addEventListener("keydown", e => {
