@@ -1,0 +1,186 @@
+<!--
+  Gen. Eden: Original Edition
+  © 2026 ふる. This file is part of this project.
+-->
+
+
+<!---------------------------------------------------------------------------->
+
+<!--
+=============================
+Gen.Eden - History Quiz App
+=============================
+
+■ Screens
+- titleScreen         : タイトル画面
+- modeSelectScreen    : ジャンル選択（科学史 / 芸術史 / 一般史）
+- levelSelectScreen   : 難易度選択
+- quizScreen          : クイズ画面
+- resultScreen        : 結果画面
+
+■ Modes
+- Science History
+- Art History
+- General History
+
+■ Difficulty
+- Easy
+- Normal
+- Hard
+
+■ Core Systems
+- Timer system
+- Progress circle
+- Session counter
+- Question pool (by category)
+
+=============================
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gen. Eden</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+  <!-- =======================================================
+       1. メニュー画面 (#gameMenu)
+       ・タイトルとFlow/Flash選択ボタン
+  ======================================================== -->
+  <div id="gameMenu">
+    <h1 id="appTitle">Gen. Eden</h1>
+    <p id="subtitle">~ Explore the past. Shape your future. ~</p>
+  <div class="row buttons-2">
+    <button onclick="selectCategory('science')">🔬 History of Science</button>
+    <button onclick="selectCategory('art')">🎨 History of Art</button>
+  </div>
+
+  <div class="row buttons-1">
+    <button onclick="selectCategory('history')">🏛 World History</button>
+  </div>
+
+    <div class="series-box">
+      <h3>Eden Series</h3>
+      <a href="https://furu622.github.io/Cal.-Eden_Next/" target="_blank">
+        🌺 Cal. Eden: Next
+      </a>
+    </div>
+  </div>
+
+
+
+  <!-- =======================================================
+       3. レベル選択画面 (#levelMenu)
+       ・レベル選択ボタン
+       ・戻るボタン
+  ======================================================== -->
+  <div id="levelMenu" style="display:none;">
+    <h2>Select Level</h2>
+    <p class="level-subtitle">Enjoy yor explore!</p>
+
+    <div class="row buttons-2">
+      <button onclick="selectLevel('easy')">🍀</button>
+      <button onclick="selectLevel('normal')">🍀🍀</button>
+    </div>
+    <div class="row buttons-2">
+      <button onclick="selectLevel('hard')">🍀🍀🍀</button>
+    </div>
+
+    <div class="row">
+      <button onclick="goMenu()">Back to Menu</button>
+    </div>
+  </div>
+
+  <!-- =======================================================
+       4. クイズ画面 (#quiz)
+       ・問題表示 (#question, #formula)
+       ・回答入力 (#answer)
+       ・結果表示 (#result)
+       ・表示切替ボタン (英文/数式)
+       ・画面遷移ボタン (Menu / Back to Level)
+       ・タイマー円形 (#progress)
+  ======================================================== -->
+  <div id="quiz" style="display:none;">
+    <!-- 問題表示 -->
+    <div class="question-row">
+      <h2 id="question"></h2>
+      <div id="formula"></div>
+    </div>
+
+    <!-- 表示切替ボタン -->
+    <div class="row buttons-2">
+      <button id="toggleQuestionBtn" onclick="toggleQuestion()">Show / Hide English</button>
+    </div>
+
+
+    <!-- 回答入力 -->
+    <div id="choices"></div>
+    <div id="result"></div>
+
+    <!-- 解説 -->
+    <div id="explanation" style="margin-top:10px;"></div>
+
+    <!-- Nextボタン -->
+    <div class="row buttons-2">
+    <button id="nextBtn" style="display:none;">Next</button>
+    </div>
+
+
+
+    <!-- 画面遷移ボタン -->
+     <!-- 成果表示ボタン一応残す
+    <div class="row buttons-2">
+      <button onclick="endSession()">Achievement</button>
+    </div>
+    -->
+
+    <!-- タイマー円形 -->
+    <div class="timer-circle">
+      <svg width="120" height="120">
+        <circle
+          id="progress"
+          cx="60" cy="60" r="50"
+          stroke="#4caf50"
+          stroke-width="16"
+          fill="none"
+          stroke-dasharray="339"
+          stroke-dashoffset="0"
+          transform="rotate(-90 60 60)"
+        />
+      </svg>
+    </div>
+
+    <!-- 経過表示 -->
+    <div id="sessionInfo">
+      Correct / Total: <span id="correctCount">0</span>/<span id="totalCount">0</span> |
+      Time: <span id="elapsedTime">0:00</span>
+    </div>
+    
+    <div class="row buttons-2">
+      <button onclick="goMenu()">Back to Menu</button>
+      <button onclick="goLevel()">Back to Level</button>
+    </div>
+
+
+  </div>
+
+  <!-- =======================================================
+       外部スクリプト読み込み
+  ======================================================== -->
+
+
+   <!-- 問題データファイル（各カテゴリー別） -->
+    <!-- Science History -->
+  <script src="data/science/mechanics/mechanics.js"></script> 
+  
+  <script src="script.js"></script>
+
+</body>
+</html>

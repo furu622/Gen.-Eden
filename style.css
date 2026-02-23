@@ -1,0 +1,271 @@
+/*
+  Gen. Eden: Original Edition
+  © 2026 ふる. This file is part of this project.
+*/
+
+/*=================================================================*/
+
+
+/* =========================================
+   Gen.Eden - History Quiz 目次
+========================================
+1. 全体共通スタイル
+2. タイトル（Game Menu）
+3. 共通ボタン・行レイアウト
+4. ツールチップ
+5. 問題表示エリア（Question / SessionInfo）
+6. 回答入力エリア
+7. 結果表示
+8. タイマー・円形プログレス
+9. カテゴリ選択画面
+10. レベル選択画面
+11. クイズ画面
+12. 補助スタイル
+======================================== */
+
+/* 1. 全体共通スタイル */
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 20px;
+  background: radial-gradient(circle at top, #1c2b22 0%, #0f1713 60%, #0a0f0c 100%);
+  color: #d7e6d7;
+}
+
+/* 2. Game Menu タイトル・サブタイトル */
+#gameMenu h1,
+#appTitle {
+  font-size: 3em;
+  color: #7edc8a;   /* 柔らかい発光緑 */
+  text-shadow: 0 0 10px rgba(126,220,138,0.3);
+}
+
+#appTitle {
+  position: relative;
+  display: inline-block;
+}
+
+#appTitle::after {
+  content: "🍃"; 
+  position: absolute;
+  right: -0.6em;
+  top: -0.5em;
+  font-size: 0.5em;
+}
+
+#subtitle {
+  font-size: 1em;
+  font-style: italic;
+  color: #7f8c8d; /* 落ち着いたグレー */
+  margin-bottom: 40px;
+}
+
+.series-box {
+  margin-top: 40px;   /* まずは40pxくらい */
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2); /* 区切り線（任意） */
+}
+
+.series-box h3 {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+
+/* 3. ボタン・行レイアウト */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1em;
+  max-width: 180px;
+  cursor: pointer;
+
+  background: linear-gradient(145deg, #1f3327, #142019);
+  color: #cfe9cf;
+
+  border: 1px solid #3b6e4a;
+  border-radius: 6px;
+
+  box-shadow:
+    inset 0 0 8px rgba(0,0,0,0.6),
+    0 3px 8px rgba(0,0,0,0.5);
+
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #284a36, #1b2f24);
+  box-shadow:
+    0 0 12px rgba(126,220,138,0.3),
+    0 4px 12px rgba(0,0,0,0.6);
+  transform: translateY(-2px);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.buttons-2 button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+/* 4. モードボタンツールチップ */
+.mode-btn {
+  position: relative;
+}
+
+.mode-btn::after {
+  content: attr(data-tooltip);
+  display: none;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #006315;
+  color: #dedee7;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.9em;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.mode-btn:hover::after {
+  display: block;
+  opacity: 1;
+}
+
+/* 5. 問題表示エリア */
+#question {
+  font-size: 2em;
+  margin: 15px 0;
+  color: #e4f5e4;
+  text-shadow: 0 0 8px rgba(126,220,138,0.15);
+}
+
+#formula {
+  font-size: 1.6em;
+  color: #555;
+  margin: 5px 0;
+}
+
+
+#sessionInfo {
+  position: static;      /* 画面に固定 */
+  margin: 10px auto;     /* 上下余白を調整 */
+  display: inline-block; /* 幅をテキストに合わせる */
+  top: 15px;            /* 上から10px */
+  right: 15px;          /* 右から10px */
+  background-color: rgba(20, 35, 25, 0.8);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  font-size: 1.2em;
+  color: #bde8c1;
+  border: 1px solid #2f5a3c;
+  z-index: 999;         /* 他の要素より前面 */
+}
+
+
+/* 6. 回答入力エリア */
+#answer {
+  width: 200px;
+  padding: 5px;
+  font-size: 1em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* 7. 結果表示 */
+#result {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* 8. タイマー円形 */
+.timer-circle {
+  margin: 20px auto;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.timer-circle svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 9. Flowモード選択画面 */
+#flowModeMenu h2 {
+  font-family: sans-serif;  
+  color: #0d6b19;
+  font-size: 2em;
+  margin-bottom: 15px;
+  display: inline-block; /* ブロック幅を文字幅に合わせる */
+
+  position: relative; 
+}
+
+#flowModeMenu h2::after {
+  content: "🍃";
+  position: absolute;
+  right: -1em; /* 文字の右端から少し外側 */
+  top: -0.6em;   /* 上に少しずらす */
+  font-size: 0.5em;
+}
+
+/* サブタイトル用 */
+.mode-subtitle {
+  font-size: 1em;
+  font-style: italic;
+  color: #7f8c8d; /* 落ち着いたグレー */
+  margin-bottom: 15px;
+}
+
+
+/* 10. レベル選択画面 */
+#levelMenu h2 {
+  font-family: sans-serif;  
+  color: #0d6b19;
+  font-size: 2em;
+  margin-bottom: 15px;
+  display: inline-block; /* ブロック幅を文字幅に合わせる */
+
+  position: relative; 
+}
+
+#levelMenu h2::after {
+  content: "🍃";
+  position: absolute;
+  right: -0.9em;
+  top: -0.8em;
+  font-size: 0.5em;
+}
+
+/* サブタイトル用 */
+.level-subtitle {
+  font-size: 1em;
+  font-style: italic;
+  color: #7f8c8d; /* 落ち着いたグレー */
+  margin-bottom: 15px;
+}
+
+
+/* 11. クイズ画面 */
+#quiz input[type="number"] {
+  text-align: center;
+}
+
+/* 12. 補助スタイル */
+.hidden {
+  visibility: hidden;
+}
