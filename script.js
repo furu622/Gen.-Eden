@@ -45,7 +45,7 @@ async function loadQuestions(category) {
         scientist: q.scientist,
         question: q.q,
         choices: [q.c1, q.c2, q.c3, q.c4].filter(Boolean),
-        answer: Number(q.answer),
+        answer: Number(q.answer) -1, //0始まりに変換 
         explanation: q.explanation,
         difficulty: q.difficulty
       }));
