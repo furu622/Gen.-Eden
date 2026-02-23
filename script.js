@@ -55,17 +55,15 @@ async function loadQuestions(category) {
       return [];
     }
   }
-}
 
-  switch (category) {
-    case "science":
-      return window.questions.filter(q => q.series === "mechanics");
-    default:
-      return [];
+  if (category === "science") {
+    return window.questions.filter(q => q.series === "mechanics");
   }
 
+  return [];
+}
 
-console.log(window.GenProblems);
+
 
 async function selectCategory(categoryName) {
   state.category = categoryName;
