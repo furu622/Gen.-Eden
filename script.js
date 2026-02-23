@@ -30,24 +30,39 @@
 
 async function loadQuestions(category) {
 
-
   if (!window.questions) {
     try {
-      const res = await fetch("./questions.csv");
+      const res = await fetch("questions.csv");
       const text = await res.text();
 
-      const result = Papa.parse(text, {
+      const parsed = Papa.parse(text, {
         header: true,
         skipEmptyLines: true
       });
 
-      window.questions = result.data;
+      window.questions = parsed.data.map(q => ({
+        series: q.series,
+        scientist: q.scientist,
+        question: q.q,
+        choices: [q.c1, q.c2, q.c3, q.c4],
+        answer: Number(q.answer),
+        explanation: q.explanation,
+        difficulty: q.difficulty
+      }));
 
     } catch (err) {
       console.error("CSV load error:", err);
       return [];
     }
   }
+
+  switch (category) {
+    case "science":
+      return window.questions.filter(q => q.series === "mechanics");
+    default:
+      return [];
+  }
+}
 
   window.questions = result.data.map(q => ({
   series: q.series,
@@ -65,7 +80,7 @@ async function loadQuestions(category) {
     default:
       return [];
   }
-}
+
 
 console.log(window.GenProblems);
 
