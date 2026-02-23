@@ -65,19 +65,18 @@ body {
   padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.2);
 
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* PCは2列 */
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-.series-box h3 {
-  grid-column: 1 / -1; /* タイトルは横幅いっぱい */
+.series-box a {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 
-@media (max-width: 600px) {
-  .series-box {
-    grid-template-columns: 1fr; /* スマホは1列 */
-  }
+.series-box a:hover {
+  opacity: 1;
 }
 
 

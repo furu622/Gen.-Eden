@@ -26,6 +26,12 @@
 14. Enterキー制御
 ======================================== */
 
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("Papa type:", typeof Papa);
+});
+
+loadQuestions("art").then(q => console.log(q));
+
 /* 1. 問題データ管理 */
 
 async function loadQuestions(category) {
@@ -47,7 +53,7 @@ async function loadQuestions(category) {
 
       window.questionsCache[category] = parsed.data.map(q => ({
         series: q.series,
-        scientist: q.scientist,
+        scientist: q.person,
         question: q.q,
         choices: [q.c1, q.c2, q.c3, q.c4].filter(Boolean),
         answer: Number(q.answer) - 1,
