@@ -44,7 +44,7 @@ async function loadQuestions(category) {
         series: q.series,
         scientist: q.scientist,
         question: q.q,
-        choices: [q.c1, q.c2, q.c3, q.c4],
+        choices: [q.c1, q.c2, q.c3, q.c4].filter(Boolean),
         answer: Number(q.answer),
         explanation: q.explanation,
         difficulty: q.difficulty
@@ -56,12 +56,11 @@ async function loadQuestions(category) {
     }
   }
 
-  switch (category) {
-    case "science":
-      return window.questions.filter(q => q.series === "mechanics");
-    default:
-      return [];
+  if (category === "science") {
+    return window.questions.filter(q => q.series === "mechanics");
   }
+
+  return [];
 }
 
 
