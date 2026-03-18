@@ -96,8 +96,27 @@ let state = {
   timeLimit: 10000
 };
 
+function getBGM() {
+  return document.getElementById("bgm");
+}
+
+function playBGM() {
+  const bgm = getBGM();
+  if (!bgm) return;
+  bgm.volume = 0.2;
+  bgm.play().catch(() => {});
+}
+
+function stopBGM() {
+  const bgm = getBGM();
+  if (!bgm) return;
+  bgm.pause();
+  bgm.currentTime = 0;
+}
+
 /* 3. 画面制御 */
 function showScreen(id) {
+  speechSynthesis.cancel();   // ←ここに入れる
   ["gameMenu", "levelMenu", "quiz"].forEach(s =>
     document.getElementById(s).style.display = "none"
   );
@@ -120,6 +139,8 @@ function toggleQuestion() {
 
 function goMenu() {
   stopTimer();
+  speechSynthesis.cancel();   // ←追加
+  stopBGM();
   document.getElementById("result").textContent = "";
   document.getElementById("nextBtn").style.display = "none";
   document.getElementById("explanation").textContent = "";
@@ -128,6 +149,7 @@ function goMenu() {
 
 function goLevel() {
   stopTimer();
+  speechSynthesis.cancel();   // ←追加
   document.getElementById("result").textContent = "";
   document.getElementById("nextBtn").style.display = "none";
   document.getElementById("explanation").textContent = "";
@@ -151,6 +173,8 @@ function selectLevel(levelName) {
 
 /* 6. クイズ開始処理 */
 function nextQuestion() {
+
+  playBGM();
 
   document.getElementById("nextBtn").style.display = "none";
   document.getElementById("result").textContent = "";
@@ -321,8 +345,11 @@ function speak(text, callback) {
   const currentQuestion = state.currentQuestion;
 
   u.onend = () => {
-    // 今の問題と一致しているときだけタイマー開始
-    if (callback && state.currentQuestion === currentQuestion) {
+    if (
+      callback &&
+      state.currentQuestion === currentQuestion &&
+      document.getElementById("quiz").style.display === "block"
+    ) {
       callback();
     }
   };
