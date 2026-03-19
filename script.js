@@ -32,6 +32,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 loadQuestions("art").then(q => console.log(q));
 
+// 0. ===== SE =====
+const correctSE = new Audio("assets/correct.mp3");
+const wrongSE = new Audio("assets/wrong.mp3");
+
+correctSE.volume = 0.3;
+wrongSE.volume = 0.3;
+
 /* 1. 問題データ管理 */
 
 async function loadQuestions(category) {
@@ -229,6 +236,15 @@ function checkAnswerUI(selectedIndex) {
   if (state.isAnswered) return;
 
   const isCorrect = selectedIndex === state.currentQuestion.answer;
+
+// ★ ここ追加（SE）
+  if (isCorrect) {
+    correctSE.currentTime = 0;
+    correctSE.play();
+  } else {
+    wrongSE.currentTime = 0;
+    wrongSE.play();
+  }
 
   showResult(isCorrect);
   recordAnswer(isCorrect);
